@@ -12,7 +12,7 @@ require File.join(File.dirname(__FILE__), 'lib', 'dr_nic_magic_models', 'version
 AUTHOR = "nicwilliams"  # can also be an array of Authors
 EMAIL = "drnicwilliams@gmail.com"
 DESCRIPTION = "Dr Nic's Magic Models - Invisible validations, assocations and Active Record models themselves!"
-GEM_NAME = "voraz-dr_nic_magic_models" # what ppl will type to install your gem
+GEM_NAME = "dr_nic_magic_models" # what ppl will type to install your gem
 RUBYFORGE_PROJECT = "magicmodels" # The unix name for your project
 HOMEPATH = "http://#{RUBYFORGE_PROJECT}.rubyforge.org"
 
