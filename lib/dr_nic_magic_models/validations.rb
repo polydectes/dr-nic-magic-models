@@ -38,7 +38,7 @@ module DrNicMagicModels
       # Single-column UNIQUE indexes
       get_unique_index_columns.each do |col|
         logger.debug "validates_uniqueness_of #{col}"
-        self.validates_uniqueness_of col
+        self.validates_uniqueness_of col, :allow_nil=>true, :allow_blank=>true
       end                  
 
     end    
