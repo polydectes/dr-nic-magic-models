@@ -19,14 +19,12 @@ lib/module.rb
 lib/rails.rb
 scripts/txt2html
 scripts/txt2js
-test.db
 test/abstract_unit.rb
 test/connections/native_mysql/connection.rb
 test/connections/native_postgresql/connection.rb
 test/connections/native_sqlite/connection.rb
 test/dummy_test.rb
 test/env_test.rb
-test/fixtures/.DS_Store
 test/fixtures/adjectives.yml
 test/fixtures/adjectives_fun_users.yml
 test/fixtures/db_definitions/mysql.drop.sql
