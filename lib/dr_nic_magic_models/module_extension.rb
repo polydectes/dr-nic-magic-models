@@ -1,7 +1,12 @@
-class Module
-  alias :normal_const_missing :const_missing
+module DrNicMagicModels::ModuleExtension
+  def self.included(base)
+    base.class_eval do
+      alias_method :normal_const_missing, :const_missing
+      alias_method :const_missing, :magic_const_missing
+    end
+  end
 
-  def const_missing(class_id)
+  def magic_const_missing(class_id)
     begin
       return normal_const_missing(class_id)
     rescue

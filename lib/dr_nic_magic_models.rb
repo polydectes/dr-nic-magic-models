@@ -12,14 +12,18 @@ end
 
 module DrNicMagicModels
     Logger = RAILS_DEFAULT_LOGGER rescue Logger.new(STDERR)
+
+    def self.extend_module_class!
+      Module.send(:include, DrNicMagicModels::ModuleExtension)
+    end
 end
 
 require 'dr_nic_magic_models/magic_model'
 require 'dr_nic_magic_models/schema'
 require 'dr_nic_magic_models/validations'
 require 'dr_nic_magic_models/inflector'
+require 'dr_nic_magic_models/module_extension'
 require 'base'
-require 'module'
 require 'rails' rescue nil
 require 'connection_adapters/abstract_adapter'
 require 'connection_adapters/mysql_adapter'
