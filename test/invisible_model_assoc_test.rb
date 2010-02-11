@@ -1,6 +1,8 @@
 require File.dirname(__FILE__) + '/abstract_unit'
 
-class InvisibleModelAssocTest < Test::Unit::TestCase
+class InvisibleModelAssocTest < ActiveSupport::TestCase
+  extend DrNicMagicModels::ModuleExtension
+
   # fixtures :fun_users, :groups, :group_memberships, :group_tag, :adjectives, :adjectives_fun_users
   
   def setup

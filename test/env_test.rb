@@ -1,6 +1,6 @@
 require 'abstract_unit'
 
-class EnvTest < Test::Unit::TestCase
+class EnvTest < ActiveSupport::TestCase
 
   def test_modules
     assert_not_nil DrNicMagicModels

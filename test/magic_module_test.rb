@@ -1,10 +1,11 @@
 require 'abstract_unit'
 
 module MagicGroup
+  extend DrNicMagicModels::ModuleExtension
   magic_module :table_name_prefix => 'group_'
 end
 
-class MagicModuleTest < Test::Unit::TestCase
+class MagicModuleTest < ActiveSupport::TestCase
 
   def setup
 

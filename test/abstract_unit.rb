@@ -12,10 +12,10 @@ ActiveSupport::Deprecation.debug = true
 
 QUOTED_TYPE = ActiveRecord::Base.connection.quote_column_name('type') unless Object.const_defined?(:QUOTED_TYPE)
 
-class Test::Unit::TestCase #:nodoc:
-  self.fixture_path = File.dirname(__FILE__) + "/fixtures/"
-  self.use_instantiated_fixtures = false
-  self.use_transactional_fixtures = true #(ENV['AR_NO_TX_FIXTURES'] != "yes")
+class ActiveSupport::TestCase #:nodoc:
+  # self.fixture_path = File.dirname(__FILE__) + "/fixtures/"
+  # self.use_instantiated_fixtures = false
+  # self.use_transactional_fixtures = true #(ENV['AR_NO_TX_FIXTURES'] != "yes")
 
   def create_fixtures(*table_names, &block)
     Fixtures.create_fixtures(File.dirname(__FILE__) + "/fixtures/", table_names, {}, &block)

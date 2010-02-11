@@ -1,7 +1,9 @@
 require 'abstract_unit'
 require 'pp'
 
-class InvisibleModelAccessTest < Test::Unit::TestCase
+class InvisibleModelAccessTest < ActiveSupport::TestCase
+  extend DrNicMagicModels::ModuleExtension
+
   # fixtures :fun_users, :groups, :group_memberships, :group_tag
   
   def setup
@@ -15,6 +17,8 @@ class InvisibleModelAccessTest < Test::Unit::TestCase
   end
   
   def test_find
+    require 'ruby-debug'
+    debugger
     @classes.each do |klass|
       assert_not_nil obj = klass.find(1)
       assert_equal klass, obj.class

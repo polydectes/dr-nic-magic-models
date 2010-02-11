@@ -7,7 +7,7 @@ module TestBed
   end
 end
 
-class TestExistingModel < Test::Unit::TestCase
+class TestExistingModel < ActiveSupport::TestCase
   # fixtures :fun_users, :groups, :group_memberships, :group_tag
   
   def setup

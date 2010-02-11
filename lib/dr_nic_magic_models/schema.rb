@@ -110,7 +110,7 @@ module DrNicMagicModels
           # Process FKs?
           if @conn.supports_fetch_foreign_keys?
 
-            tables.each do |table_name|
+            table_names.each do |table_name|
               logger.debug "Getting FKs for #{table_name}"
               @fks_by_table[table_name] = Array.new
               @conn.foreign_key_constraints(table_name).each do |fk|

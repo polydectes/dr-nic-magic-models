@@ -1,12 +1,7 @@
-module DrNicMagicModels::ModuleExtension
-  def self.included(base)
-    base.class_eval do
-      alias_method :normal_const_missing, :const_missing
-      alias_method :const_missing, :magic_const_missing
-    end
-  end
+class Module
+  alias :normal_const_missing :const_missing
 
-  def magic_const_missing(class_id)
+  def const_missing(class_id)
     begin
       return normal_const_missing(class_id)
     rescue
@@ -18,8 +13,8 @@ module DrNicMagicModels::ModuleExtension
     superklass = @magic_schema.superklass || ActiveRecord::Base
     klass = create_class(class_id, superklass) do
       set_table_name table_name
-      # include DrNicMagicModels::MagicModel
-      # extend DrNicMagicModels::Validations
+      include DrNicMagicModels::MagicModel
+      extend DrNicMagicModels::Validations
     end
     klass.generate_validations # need to call this AFTER the class name has been assigned
     @magic_schema.inflector.post_class_creation klass

@@ -1,9 +1,9 @@
 require 'abstract_unit'
 
-class InvisibleModelClassesTest < Test::Unit::TestCase
+class InvisibleModelClassesTest < ActiveSupport::TestCase
+  extend DrNicMagicModels::ModuleExtension
 
   def setup
-
   end
       
   def test_available

@@ -3,7 +3,7 @@ require 'abstract_unit'
 #require 'fixtures/group'
 #require 'fixtures/membership'
 
-class DummyTest < Test::Unit::TestCase
+class DummyTest < ActiveSupport::TestCase
   def setup
   end
   
