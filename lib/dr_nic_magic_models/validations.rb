@@ -35,8 +35,8 @@ module DrNicMagicModels
      
         # Active record seems to interpolate booleans anyway to either true, false or nil...
         if column.type == :boolean
-          logger.debug "validates_inclusion_of #{column.name}, :in => [true, false], :allow_nil => #{column.null}, :message => ActiveRecord::Errors.default_error_messages[:blank]"
-          self.validates_inclusion_of column.name, :in => [true, false], :allow_nil => column.null, :message => ActiveRecord::Errors.default_error_messages[:blank]
+          logger.debug "validates_inclusion_of #{column.name}, :in => [true, false], :allow_nil => #{column.null}, :message => I18n.translate('activerecord.errors.messages')"
+          self.validates_inclusion_of column.name, :in => [true, false], :allow_nil => column.null, :message => I18n.translate('activerecord.errors.messages')
         elsif !column.null
           #test if the column have a belongs_to association
           logger.debug "validates_presence_of #{column.name}"
